@@ -71,12 +71,12 @@
 
     <!-- Mobile Navigation Panel -->
     <div *ngIf="isMobileMenuOpen()"
-      class="md:hidden glass-nav border-t border-cream-200/50 animate-fade-in absolute top-20 left-0 w-full shadow-xl">
+      class="md:hidden bg-white border-t border-cream-200 absolute top-20 left-0 w-full shadow-2xl z-50 animate-fade-in">
       <div class="px-4 pt-3 pb-6 space-y-2">
         @for (link of navLinks; track link.id) {
         <a (click)="scrollTo(link.id)"
           class="block px-4 py-3 rounded-xl text-base font-bold tracking-wide transition-all duration-200"
-          [ngClass]="activeSection() === link.id ? 'bg-terracotta-50 text-terracotta-600 border-l-4 border-terracotta-600 pl-3' : 'text-claybrown-900/80 hover:bg-cream-100 hover:text-terracotta-600'">
+          [ngClass]="activeSection() === link.id ? 'bg-terracotta-600 text-white pl-4 shadow-sm' : 'text-claybrown-900 hover:bg-cream-100 hover:text-terracotta-600'">
           {{ link.label }}
         </a>
         }
@@ -1157,6 +1157,19 @@
 
     </div>
   </footer>
+
+  <!-- Floating Call CTA -->
+  <a href="tel:+919207045332"
+    class="fixed bottom-24 right-6 z-50 flex items-center justify-center w-14 h-14 bg-terracotta-600 text-white rounded-full shadow-lg hover:bg-terracotta-700 hover:scale-110 active:scale-95 transition-all duration-300 group"
+    aria-label="Call Us">
+    <!-- Pulse Ring Effect -->
+    <span class="absolute inline-flex h-full w-full rounded-full bg-terracotta-600 opacity-75 animate-ping group-hover:animate-none"></span>
+    <!-- Icon -->
+    <svg class="w-6 h-6 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+    </svg>
+  </a>
 
   <!-- Floating WhatsApp CTA -->
   <a href="https://wa.me/919207045332" target="_blank" rel="noopener noreferrer"
