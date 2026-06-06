@@ -1,3 +1,106 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+@theme {
+  --color-terracotta-50: #FDF8F6;
+  --color-terracotta-100: #FBECE7;
+  --color-terracotta-200: #FAD5CA;
+  --color-terracotta-300: #F5B09B;
+  --color-terracotta-400: #ED8162;
+  --color-terracotta-500: #C05C3E;
+  --color-terracotta-600: #A64B2E;
+  --color-terracotta-700: #8C3D24;
+  --color-terracotta-800: #702F1A;
+  --color-terracotta-900: #572210;
+
+  --color-cream-50: #FAF8F5;
+  --color-cream-100: #F4EFE6;
+  --color-cream-200: #E8DEC9;
+  --color-cream-300: #DBCAAB;
+  --color-cream-400: #C8B289;
+  --color-cream-500: #B29668;
+  --color-cream-900: #261F13;
+
+  --color-gold-50: #FEFCF3;
+  --color-gold-100: #FAF5D8;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #B89225;
+  --color-gold-700: #937119;
+
+  --color-claybrown-50: #F8F6F5;
+  --color-claybrown-800: #3E2723;
+  --color-claybrown-900: #2D1914;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-slide-up: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-up: scale-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes scale-up {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Custom CSS Scroll Margin for sticky header offset */
+section {
+  scroll-margin-top: 5rem;
+}
+
+/* Custom glassmorphism utilities */
+.glass-nav {
+  background: rgba(250, 248, 245, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(192, 92, 62, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(232, 222, 201, 0.4);
+}
+
+.glass-card-dark {
+  background: rgba(45, 25, 20, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(192, 92, 62, 0.2);
+}
+
+/* Custom patterned backgrounds */
+.tile-pattern-bg {
+  background-color: #faf8f5;
+  background-image: radial-gradient(rgba(192, 92, 62, 0.08) 1.5px, transparent 1.5px), radial-gradient(rgba(192, 92, 62, 0.08) 1.5px, #faf8f5 1.5px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Prevent horizontal overflow globally */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
